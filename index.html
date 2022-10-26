@@ -56,14 +56,14 @@
         }
 
         function sendText(text) {
-            //liff.sendMessages([{
-                //'type': 'text',
-                //'text': text
-            //}]).then(function () {
+            liff.sendMessages([{
+                'type': 'text',
+                'text': text
+            }]).then(function () {
                 liff.closeWindow();
-            //}).catch(function (error) {
-                //window.alert('Failed to send message ' + error);
-            //});
+            }).catch(function (error) {
+                window.alert('Failed to send message ' + error);
+            });
         }
 
         const params = (new URL(document.location)).searchParams;
@@ -76,7 +76,8 @@
                 const fukkin  = $('input[name="fukkin"]').val();
                 const haikin  = $('input[name="haikin"]').val();
                 const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                //const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const msg = `アンケートにお答えいただき、ありがとうございました。\n後ほど、お問合せや契約確認時に必要な情報をお伝えいたします。`;
                 sendText(msg);
                 return false;
             });
