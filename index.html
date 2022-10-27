@@ -77,7 +77,7 @@
                 const haikin  = $('input[name="haikin"]').val();
                 const sukuwat = $('input[name="sukuwat"]').val();
                 //const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
-                const msg = `アンケートにお答えいただき、ありがとうございました。\n後ほど、お問合せや契約確認時に必要な情報をお伝えいたします。`;
+                const msg = `アンケートにお答えいただき、ありがとうございました。\n後ほど、お問合せや契約確認時に必要な情報をお伝えいたします。\nアンケート回答結果\n${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
                 sendText(msg);
                 return false;
             });
