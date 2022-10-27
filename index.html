@@ -38,6 +38,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
 
         $(document).ready(function () {
@@ -79,6 +80,19 @@
                 //const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
                 const msg = `アンケートにお答えいただき、ありがとうございました。\n後ほど、お問合せや契約確認時に必要な情報をお伝えいたします。`;
                 sendText(msg);
+                
+                var data = {
+                    name : $('input[name="name"]').val();,
+                    udetate = $('input[name="udetate"]').val();
+                    fukkin  = $('input[name="fukkin"]').val();
+                    haikin  = $('input[name="haikin"]').val();
+                    sukuwat = $('input[name="sukuwat"]').val();
+                };
+                    $.ajax({
+                             type: "post",
+                             url: "https://dev-line-bot.max-support.co.jp/",
+                             data: data,
+                    });
                 return false;
             });
         });
